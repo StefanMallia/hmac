@@ -28,7 +28,6 @@ pub fn hmac_sha256(message: &str, secret_key: &str) -> String
   let mut hashed_i = sha256_bytes(&i_key_pad_concat_message);
 
   o_key_pad.append(&mut hashed_i);
-  println!("{:?}", o_key_pad);
 
   let hash = sha256_bytes(&o_key_pad);
   let mut hex = vec![0 as u32; hash.len()/4];
